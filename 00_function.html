@@ -1,0 +1,68 @@
+<!-- 
+  예제에 너무 많은 파일들이 생겨서 편의상 html안에 style과 script를 정의하는 방법을 쓰겠습니다.
+  파일을 별도로 만드는 것과 똑같이 동작합니다. 
+  이 방법은 코드 양이 많아질수록 스크롤이 길어져 관리 하기 
+  불편하기 때문에 실 작업시에는 별도로 파일을 분리하는게 좋습니다.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>for loop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+  Function 연습 : console창을 열어서 확인해봅시다.
+  <br> function은 비슷한 코드가 반복 될때,
+  <br> 의도적인 기능범위의 구분으로 유지보수 편의상 향상에 목적이 있습니다.
+
+  <script>
+    // function을 변수에 담아 둡니다. -> function 정의
+    var 테스트를_출력하는_기능 = function () {
+      console.log("테스트")
+    }
+
+    // function 실행
+    테스트를_출력하는_기능();
+
+    // 1. 넘겨받은 parameter를 출력해주는 기능
+    var 파라미터를_출력하는_기능 = function (파라미터) {
+      console.log(파라미터);
+    }
+
+    파라미터를_출력하는_기능("안녕?");
+    파라미터를_출력하는_기능(123);
+    파라미터를_출력하는_기능([1, 2, 3]);
+    파라미터를_출력하는_기능(function () { console.log("함수를 전달") });
+
+
+    // 2. 넘겨받은 두 개의 parameter 더하고 출력하는 기능
+    var 파라미터_두개를_더하고_출력하는_기능 = function (파라미터1, 파라미터2) {
+      console.log(파라미터1 + 파라미터2)
+    }
+
+    파라미터_두개를_더하고_출력하는_기능(1, 5);
+    파라미터_두개를_더하고_출력하는_기능("I Seoul", " You");
+
+    // 3. 넘겨받은 두 개의 parameter 더한 값을 return 하는 기능
+    var 파라미터_두개를_더하는_기능 = function (파라미터1, 파라미터2) {
+      return 파라미터1 + 파라미터2;
+    }
+
+    파라미터_두개를_더하는_기능(2, 3);
+    // 실행만 하면 아무일도 일어나지 않습니다.
+    // 실제로 2와 3을 컴퓨터가 더하기만 했기 때문입니다.
+    // 활용하려면 아랫줄처럼 새로운 변수에 담아 사용하는 방법을 씁니다.
+    var 리턴받은값 = 파라미터_두개를_더하는_기능(2, 3);
+    console.log("리턴받은값 : " + 리턴받은값)
+
+  </script>
+
+</body>
+
+</html>
